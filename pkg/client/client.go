@@ -9,9 +9,11 @@ import (
 )
 
 type RedisArgs struct {
-	RedisHost string
-	RedisPort int
-	Db        int
+	RedisHost  string
+	RedisPort  int
+	Db         int
+	ClientName string
+	Password   string
 }
 
 // newRedisClient creates a new Redis client and returns it along with any error encountered.
@@ -24,8 +26,10 @@ func (r RedisArgs) NewRedisClient(ctx context.Context) (*redis.Client, error) {
 	redisAdress := fmt.Sprintf("%s:%d", r.RedisHost, r.RedisPort)
 
 	redisClient := redis.NewClient(&redis.Options{
-		Addr: redisAdress,
-		DB:   r.Db,
+		Addr:       redisAdress,
+		DB:         r.Db,
+		ClientName: r.ClientName,
+		Password:   r.Password,
 	})
 
 	_, err := redisClient.Ping(ctx).Result()
