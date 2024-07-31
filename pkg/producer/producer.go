@@ -3,7 +3,7 @@ package producer
 import (
 	"context"
 
-	"github.com/enerBit/redsumer/pkg/client"
+	"github.com/andresxlp/redsumer/pkg/client"
 	"github.com/redis/go-redis/v9"
 )
 
@@ -16,6 +16,7 @@ type Producer struct {
 type ProducerArgs struct {
 	StreamName string
 }
+
 // NewProducer creates a new instance of the Producer struct.
 // It takes a context.Context, RedisArgs, and ProducerArgs as input parameters.
 // It returns a pointer to the created Producer and an error, if any.

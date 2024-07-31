@@ -1,4 +1,4 @@
-module github.com/enerBit/redsumer
+module github.com/andresxlp/redsumer
 
 go 1.21
 

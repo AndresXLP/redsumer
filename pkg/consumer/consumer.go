@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/enerBit/redsumer/pkg/client"
+	"github.com/andresxlp/redsumer/pkg/client"
 	"github.com/redis/go-redis/v9"
 )
 
