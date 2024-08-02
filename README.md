@@ -7,6 +7,10 @@
  |_|  \_\|______||_____/ |_____/  \____/ |_|  |_||______||_|  \_\
 ```
 
+## DISCLAIMER ⚠️
+
+This project is a modification of the original [redsumer library](https://github.com/enerBit/redsumer). The original library was developed by the [enerBit](https://github.com/enerBit) team and is available under the MIT license.
+
 ## Description
 
 Redsumer is a GO library that provides a simple way to consume and produce messages from a Redis Stream. It is designed to be used in a microservices architecture, where a service needs to consume messages from a Redis Stream and process them. It is built on top of the [go-redis]("https://github.com/redis/go-redis") library.
@@ -16,7 +20,7 @@ Redsumer is a GO library that provides a simple way to consume and produce messa
 Use the package manager [go get](https://golang.org/cmd/go/#hdr-Add_dependencies_to_current_module_and_install_them) to install Redsumer.
 
 ```bash
-go get github.com/enerBit/redsumer
+go get github.com/andresxlp/redsumer
 ```
 
 ## Usage
@@ -31,8 +35,8 @@ import (
     "fmt"
     "time"
 
-    "github.com/enerBit/redsumer/pkg/client"
-    "github.com/enerBit/redsumer/pkg/consumer"
+    "github.com/andresxlp/redsumer/pkg/client"
+    "github.com/andresxlp/redsumer/pkg/consumer"
 )
 
 func main() {
@@ -107,12 +111,12 @@ import (
 	"context"
 	"time"
 
-    "github.com/enerBit/redsumer/pkg/producer"
+    "github.com/andresxlp/redsumer/pkg/producer"
 )
 
 func main() {
     // Redis client configuration
-    redisArgs := producer.RedisArgs{
+    redisArgs := producer.ProducerArgs{
         RedisHost: "localhost",
 		RedisPort: 6379,
 		Db:        0,

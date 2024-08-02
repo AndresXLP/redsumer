@@ -11,9 +11,11 @@ func TestNewRedisClient(t *testing.T) {
 
 	// Create a RedisArgs instance with test values
 	redisArgs := RedisArgs{
-		RedisHost: "localhost",
-		RedisPort: 6379,
-		Db:        0,
+		RedisHost:  "localhost",
+		RedisPort:  6379,
+		Db:         0,
+		ClientName: "default",
+		Password:   "default",
 	}
 
 	// Call the NewRedisClient function

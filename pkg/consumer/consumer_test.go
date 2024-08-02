@@ -654,8 +654,8 @@ func TestClaimedSuccess(t *testing.T) {
 			IdleStillMine:      0,
 			Tries:              []int{},
 		},
-		client:                 db,
-		LatestPendingMessageId: "0-0",
+		client:          db,
+		NextIdAutoClaim: "0-0",
 	}
 
 	msgs, err := consumer.claimedMessages(context.Background())
@@ -702,8 +702,8 @@ func TestClaimedError(t *testing.T) {
 			IdleStillMine:      0,
 			Tries:              []int{},
 		},
-		client:                 db,
-		LatestPendingMessageId: "0-0",
+		client:          db,
+		NextIdAutoClaim: "0-0",
 	}
 
 	_, err := consumer.claimedMessages(context.Background())
